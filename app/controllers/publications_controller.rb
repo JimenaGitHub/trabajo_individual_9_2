@@ -24,7 +24,7 @@ class PublicationsController < ApplicationController
   def create
     @publication = Publication.new(publication_params)
     @publication.save
-    #redirect_to action: :index, notice: "Publication created"
+    redirect_to action: :index, notice: "Publication created"
 
     respond_to do |format|
       if @publication.save
