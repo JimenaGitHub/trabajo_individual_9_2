@@ -11,8 +11,9 @@
   </head>
 
   <body>
-   <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <h3>Welcome</h3> <%= current_user.try(:email) %>
     <%= yield %>
   </body>
 </html>
