@@ -1,6 +1,5 @@
 class PublicationsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
-
   before_action :set_publication, only: %i[ show edit update destroy ]
 
   # GET /publications or /publications.json
@@ -24,9 +23,6 @@ class PublicationsController < ApplicationController
   # POST /publications or /publications.json
   def create
     @publication = Publication.new(publication_params)
-    @publication.save
-    redirect_to action: :index, notice: "Publication created"
-
     respond_to do |format|
       if @publication.save
         format.html { redirect_to publication_url(@publication), notice: "Publication was successfully created." }
@@ -72,4 +68,5 @@ class PublicationsController < ApplicationController
     def publication_params
       params.require(:publication).permit(:title, :content, :tag_id, :user_id, publication_attributes: [:title])
     end
-end
+  end
+
