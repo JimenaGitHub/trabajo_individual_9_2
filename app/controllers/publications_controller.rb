@@ -5,7 +5,7 @@ class PublicationsController < ApplicationController
   # GET /publications or /publications.json
   def index
     @publications = Publication.all
-    @tags = Tag.all
+   
   end
 
   # GET /publications/1 or /publications/1.json
@@ -15,6 +15,7 @@ class PublicationsController < ApplicationController
   # GET /publications/new
   def new
     @publication = Publication.new
+    @tag = Tag.all
   end
 
   # GET /publications/1/edit
@@ -64,10 +65,11 @@ class PublicationsController < ApplicationController
       @publication = Publication.find(params[:id])
     end
 
+
     private
     # Only allow a list of trusted parameters through.
     def publication_params
-      params.require(:publication).permit(:title, :content, :tag_id, :user_id, publication_attributes: [:title])
+      params.require(:publication).permit(:title, :content, :tag_id, :user_id)
     end
   end
 

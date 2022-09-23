@@ -23,7 +23,8 @@
 
   <div>
     <%= form.label :tag_id, style: "display: block" %>
-    <%= form.text_field :tag_id %>
+    <%= form.collection_select :tag_id, @tag, :id, :nombre %>
+    <%#= form.text_field :tag_id %>
   </div>
 
   <div>

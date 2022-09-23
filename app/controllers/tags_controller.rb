@@ -13,7 +13,7 @@ class TagsController < ApplicationController
   # GET /tags/new
   def new
     @tag = Tag.new
-    @publication = Publication.all
+   
   end
 
   # GET /tags/1/edit

@@ -12,6 +12,6 @@
   <% end %>
 </div>
 
-<%#= if usuario_signed_in? %>
-<%= link_to "New publication", new_publication_path %>
-<%# end %>
+<% if user_signed_in? %>
+  <%= link_to "New publication", new_publication_path %>
+<% end %>
