@@ -5,6 +5,7 @@ class PublicationsController < ApplicationController
   # GET /publications or /publications.json
   def index
     @publications = Publication.all
+    @tags = Tag.all
   end
 
   # GET /publications/1 or /publications/1.json
